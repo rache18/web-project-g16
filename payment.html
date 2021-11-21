@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="payment.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+
+<body>
+    <div id= "GridContainer">
+        <div id="item1">
+            <div id="picture" class="center"> 
+                <img id=picture src="logo.jpeg" alt="logo img">    
+            </div>
+            <div id="login" class="right">  
+               שלום משתמש <br><br>    
+            </div>
+            <div id="nav" class="right"> דף הבית | עלינו | איזור אישי | גלריה | חנות | עגלת קניות </div>
+            <div id="divsearch" class="right"> 
+                <input type="" id="search" name="search" placeholder="...חיפוש">
+            </div>
+         </div> 
+
+         <div id="item2" class="center">
+             <div id=DeliveryMethod>
+                <p>:בחר שיטת משלוח</p>
+                <form >
+                    <label for="Pick_Up">איסוף מהסניף</label>
+                    <input type="radio" id="Pick_Up" name="Delivery_Method" value="Pick_Up"> <br>
+                    <label for="current_Adress">משלוח לכתובת משתמש</label>
+                    <input type="radio" id="current_Adress" name="Delivery_Method" value="current_Adress"> <br>
+                    <label for="Other_Adress">הכנסת כתובת משלוח</label>
+                    <input type="radio" id="Other_Adress" name="Delivery_Method" value="Other_Adress">
+                  </form>
+             </div>
+                <!-- <div id=OrderSummary> 
+                    סיכום הזמנה <br>
+                    <textarea name="Events" cols="19" rows="2" ></textarea>
+                </div> -->
+                <div>
+                    <form  id=payment>
+                        <input id="Card_Number" name="Card_Number">
+                        <label for="Card_Number"> מספר כרטיס אשראי</label> <br>
+                        <input id="Expiry_Date" name="Expiry_Date">
+                        <label for="Expiry_Date"> תוקף</label> <br>
+                        <input id="CVV" name="CVV">
+                        <label for="CVV"> שלוש ספרות בגב הכרטיס</label> <br>
+                        <input type="submit"> 
+                        <label for="CVV"> תשלום </label>
+                    </form>
+                </div> 
+                <br> <br> <br> <br> <br> <br> <br>
+         </div>
+
+         <div id="item3" class="center">
+            <div class=down class=center id=media>
+                סוקולנט במדיה
+                <br> <br>
+                <img class=picture src="instanew.PNG" alt="">
+                <img class=picture src="facebook.png" alt="">
+                <img class=picture src="twitter.png" alt="">
+            </div>
+            <div class=down id=map>
+                מפה
+            </div>
+            <div class=down id=customerService>
+                שירות לקוחות <br> <br>
+                מדיניות החזרים <br>
+                מדיניות משלוחים
+            </div>
+            <div class=down id=info>
+                מידע <br> <br>
+                כתובת <br>
+                טלפון <br>
+                שעות פעילות
+            </div>
+         </div>
+    </div>
+          
+</body>
+</html>

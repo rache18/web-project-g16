@@ -11,9 +11,9 @@ body {
 #GridContainer #item1{
     display: grid; /* change display property (from black level to grid)*/
     grid-template-areas: 
-    'login login login login login login login login login login login login login picture '
-    'nav nav nav nav nav nav nav nav nav nav nav nav nav picture '
-    'search search search search search search search search search search search search search picture '
+    'picture login login login login login login login login login login login login login'
+    'picture nav nav nav nav nav nav nav nav nav nav nav nav nav'
+    'picture search search search search search search search search search search search search search'
     ;
     
 }
@@ -47,17 +47,46 @@ body {
     grid-area: search;
     width: 100%;
     height: 6vh;
+    text-align: right;
 }
 #search {
     grid-area: search;
     width: 40%;
     height: 6vh;
+    text-align: right;
     border: 1.5px solid black;
 }
 
+
 #item2{
-    grid-area: mid;
-    /* height: 62vh; */
+    display: grid;
+    /* grid-area: mid; */
+    grid-template-areas:
+    'DeliveryMethod'
+    'payment'
+    ;
+}
+
+#DeliveryMethod{
+    width: 40%;
+    height: 6vh;
+    text-align: right;
+}
+
+#OrderSummary{
+    width: 40%;
+    height: 6vh;
+    text-align: right;
+}
+
+#payment{
+    width: 60%;
+    height: 6vh;
+    text-align: left;
+}
+
+.form{
+    display: grid;
 }
 
 #item3{
@@ -65,8 +94,8 @@ body {
     height: 15vh;
 }
 
-.left{
-    text-align: left;
+.right{
+    text-align: right;
     font-family:MyFont;
     /* border: 1px solid black; */
 }
@@ -87,11 +116,6 @@ body {
     border: 1.3px solid black;
 }
 
-.pictureBase{
-    width: 150px; height: 150px ;
-    border: 1.5px solid black;    border-radius: 50%;
-    margin: 1.5%;
-}
 
 @font-face{
     font-family: MyFont;
@@ -104,9 +128,9 @@ body {
     }
     #GridContainer {
         grid-template-areas: 
-        'login picture'
-        'nav picture'
-        'search picture'
+        'picture login'
+        'picture nav'
+        'picture search'
         'mid'
         'dowm'
         ;
