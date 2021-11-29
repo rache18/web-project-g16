@@ -58,14 +58,7 @@
                 <b> On Sale:</b> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 <button class="btn" onclick="filterSelection('sale')">sale</button>
             </div>
-            <div class = filter>
-                <b> Colour: </b> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                <button id = "green" class="btn" onclick="filterSelection('green')">green</button>
-                <button id = "yellow" class="btn" onclick="filterSelection('yellow')">yellow</button>
-                <button id = "white" class="btn" onclick="filterSelection('white')">white</button>
-                <button id = "blue" class="btn" onclick="filterSelection('blue')">blue</button>
-                <button id = "black" class="btn" onclick="filterSelection('black')">black</button>
-            </div>
+
         
             
             <ul id="Product_list">
@@ -79,7 +72,7 @@
                 </li> 
 
                 <li>
-                    <div class="card filterDiv mid sale green" v-for="post in filteredList">
+                    <div class="card filterDiv mid sale" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/store2.PNG" alt=""> 
                         <p><b>box</b></p>
                         price: <del>80₪</del> <ins>55₪</ins>
@@ -87,7 +80,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv high green" v-for="post in filteredList">
+                    <div class="card filterDiv high" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/store3.PNG" alt=""> 
                         <p><b>avocado</b></p>
                         price: 190₪
@@ -95,7 +88,7 @@
                     </div>
                 </li> 
                 <li>
-                    <div class="card filterDiv mid yellow" v-for="post in filteredList">
+                    <div class="card filterDiv mid" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/store4.PNG" alt=""> 
                         <p><b>pineapple</b></p>
                         price: 60₪
@@ -104,7 +97,7 @@
                 </li> 
 
                 <li>
-                    <div class="card filterDiv low sale black" v-for="post in filteredList">
+                    <div class="card filterDiv low sale" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/photo7.jpeg" alt=""> 
                         <p><b>regular</b></p>
                         price: <del>40₪</del> <ins>25₪</ins>
@@ -112,7 +105,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv low yellow" v-for="post in filteredList">
+                    <div class="card filterDiv low" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/base3.PNG" alt=""> 
                         <p><b>pikachu</b></p>
                         price: 35₪
@@ -120,7 +113,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv mid sale blue" v-for="post in filteredList">
+                    <div class="card filterDiv mid sale" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/photo3.jpeg" alt=""> 
                         <p><b>blue pokemon</b></p>
                         price: <del>90₪</del> <ins>60₪</ins>
@@ -128,7 +121,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv mid white" v-for="post in filteredList">
+                    <div class="card filterDiv mid" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/photo4.jpeg" alt=""> 
                         <p><b>chinese food</b></p>
                         price: 80₪
@@ -136,7 +129,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv high yellow" v-for="post in filteredList">
+                    <div class="card filterDiv high" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/base2.png" alt=""> 
                         <p><b>cheese</b></p>
                         price: 270₪
@@ -152,7 +145,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv low blue" v-for="post in filteredList">
+                    <div class="card filterDiv low" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/base4.png" alt=""> 
                         <p><b>Sponge bob </b></p>
                         price: 45₪
@@ -160,7 +153,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv low white" v-for="post in filteredList">
+                    <div class="card filterDiv low" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/Item1.PNG" alt=""> 
                         <p><b>snail</b></p>
                         price: 45₪
@@ -168,7 +161,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="card filterDiv high sale white" v-for="post in filteredList">
+                    <div class="card filterDiv high sale" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/Item2.PNG" alt=""> 
                         <p><b>alpaca</b></p>
                         price: <del>240₪</del> <ins>160₪</ins>
@@ -177,7 +170,7 @@
                 </li>
                 
                 <li>
-                    <div class="card filterDiv high black" v-for="post in filteredList">
+                    <div class="card filterDiv high" v-for="post in filteredList">
                         <img class=shopPicture src="Pictures/photo1.jpeg" alt=""> 
                         <p><b>yin and yang</b></p>
                         price: 130₪
