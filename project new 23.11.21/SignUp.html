@@ -11,10 +11,8 @@
 
 <body>
 
-
-    <div id= "GridContainer"> 
         <!-- -----header-------- -->
-        <div id="Header"> 
+        <header id="Header"> 
             <div class=picture_logo> 
                 <img class=picture_logo src="Pictures/logo.png" alt="logo img">    
             </div>
@@ -22,8 +20,7 @@
                 <button class=border> Sign Up</button> 
                 <button class=border> Sign In</button> <br> <br>
             </div>
-            <div id="nav"> 
-                <nav class="navbar">
+            <nav id="nav" class="navbar"> 
                     <!-- LOGO -->
                     <div class="logo"></div>
                     <!-- NAVIGATION MENU -->
@@ -38,61 +35,59 @@
                             <li><a href="/">Cart</a></li>
                         </div>
                     </ul>
-                </nav>
-            </div>
-        </div>
+            </nav>
+        </header>
         <!-- ----------------Main----------------- -->
-         <div id="Main" class="login_center">
+         <main id="Main" class="login_center">
              <div class="login_img"></div>
              <div class="login_text">
-		    <div class="login_h">
-			    <div>SUCCULENTS<span>3D</span></div>
-		    </div>
-		    <br>
-		    <div class="login">
-                <form action=""  name="signUp" onsubmit="return SignUpvalidateForm()">
-                    <input type="text" placeholder="username" name="username"><br>
-                    <input type="email" placeholder="Email" name="email"><br>
-                    <input type="password" placeholder=" password" name="password"><br>
-                    <input type="password" placeholder="repeat password" name="password2"><br>
-                    <input type="Submit" value="Enter">
-                </form>
-		    </div>
+                <div class="login_h">
+                    <div>SUCCULENTS<span>3D</span></div>
+                </div>
+                <br>
+                <div class="login">
+                    <form action=""  name="signUp" onsubmit="return SignUpvalidateForm()">
+                        <input type="text" placeholder="username" name="username"><br>
+                        <input type="email" placeholder="Email" name="email"><br>
+                        <input type="password" placeholder=" password" name="password"><br>
+                        <input type="password" placeholder="repeat password" name="password2"><br>
+                        <input type="Submit" value="Enter">
+                    </form>
+                </div>
             </div>
-         </div>
+        </main>
   <!-- ------footer----------- -->
-  <div id="footer">
+    <footer id="footer">
+                
+        <div class=footer id=media>
+            <b> Media </b>
+            <br> <br>
+            <a href="https://www.instagram.com/succulents3d/?hl=en">
+                <img class=picture src="Pictures/instanew.PNG" alt="">
+            </a>
+            <a href="https://www.facebook.com/groups/255920461595819/user/100000226827774/">
+                <img class=picture src="Pictures/facebook.png" alt="">
+            </a>
+            <a href="https://twitter.com/Treesftf?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                <img class=picture src="Pictures/twitter.png" alt="">
+            </a>
+        </div>
+
+        <div class=footer id= "googleMap" style="width:100%;">
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwM32NKi7XSP0uVPI6pPp4YIEICkudsuE&callback=myMap">
+            </script>
+        </div>
+
+        <div class=footer id="info">
+            <b> Address </b> <br>
+            <p> Yitzahk Rager St, Beer-Sheva </p><br> 
+                            
+            <b> Customer Service </b> <br> 
             
-    <div class=footer id=media>
-        <b> Media </b>
-        <br> <br>
-        <a href="https://www.instagram.com/succulents3d/?hl=en">
-            <img class=picture src="Pictures/instanew.PNG" alt="">
-        </a>
-        <a href="https://www.facebook.com/groups/255920461595819/user/100000226827774/">
-            <img class=picture src="Pictures/facebook.png" alt="">
-        </a>
-        <a href="https://twitter.com/Treesftf?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-            <img class=picture src="Pictures/twitter.png" alt="">
-        </a>
-     </div>
-
-    <div class=footer id= "googleMap" style="width:100%;">
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwM32NKi7XSP0uVPI6pPp4YIEICkudsuE&callback=myMap">
-        </script>
-    </div>
-
-    <div class=footer id="info">
-        <b> Address </b> <br>
-        <p> Yitzahk Rager St, Beer-Sheva </p><br> 
-                        
-        <b> Customer Service </b> <br> 
-        
-        <p>Phone: +972-54333333  </p>
-        <p>Activity Time: 9am - 5pm</p>
-        <button class="Refound"> Return & Refund Policy</button> 
-    </div>
-</div>
-</div>  
+            <p>Phone: +972-54333333  </p>
+            <p>Activity Time: 9am - 5pm</p>
+            <button class="Refound"> Return & Refund Policy</button> 
+        </div>
+    </footer>  
 </body>
 </html>

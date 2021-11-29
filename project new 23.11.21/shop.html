@@ -11,9 +11,8 @@
 </head>
 
 <body>
-    <div  id= "GridContainer">
         <!-- -----header-------- -->
-        <div id="Header"> 
+        <header id="Header"> 
             <div class=picture_logo> 
                 <img class=picture_logo src="Pictures/logo.png" alt="logo img">    
             </div>
@@ -21,8 +20,7 @@
                 <label class=enter > Hello User </label>
                 <button class=border > Sign Out </button> 
             </div>
-            <div id="nav"> 
-                <nav class="navbar">
+            <div id="nav" class="navbar"> 
                     <!-- LOGO -->
                     <div class="logo"></div>
                     <!-- NAVIGATION MENU -->
@@ -37,102 +35,110 @@
                             <li><a href="/">Cart</a></li>
                         </div>
                     </ul>
-                </nav>
-            </div>
-        </div>
-        <div id="search_eara">
+            </nav>
+        </header>
+
+        <!-- ------main----------- -->
+
+        <main id="search_eara">
             <input class="search-box" type="text" id="search" onkeyup="myFunction()" placeholder="Search for names..">
         
             <div id="myBtnContainer">
-                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn" onclick="filterSelection('low')"> 10-49</button>
-                <button class="btn" onclick="filterSelection('mid')"> 50-100</button>
-                <button class="btn" onclick="filterSelection('high')"> more then 100</button>
+                <b> Shop By Price: </b>
+                <button class="btn active" onclick="filterSelection('all')"> The whole store </button>
+                <button class="btn" onclick="filterSelection('low')">under 50₪</button>
+                <button class="btn" onclick="filterSelection('mid')"> 50₪-100₪</button>
+                <button class="btn" onclick="filterSelection('high')"> over 100₪</button>
             </div>
         
             
-                    <ul id="Product_list">
-                        <li>
-                            <div class="card filterDiv low" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/photo1.jpeg" alt=""> 
-                                <p><b>pikachu</b></p>
-                                price: 20$ 
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv mid" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/photo2.jpeg" alt=""> 
-                                <p><b>dad</b></p>
-                                price: 100$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv mid" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/photo3.jpeg" alt=""> 
-                                <p><b>lal</b></p>
-                                price: 100$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv mid" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/photo4.jpeg" alt=""> 
-                                <p><b>sus</b></p>
-                                price: 100$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv mid" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/photo5.jpeg" alt=""> 
-                                <p><b>bar</b></p>
-                                price: 100$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv high" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/photo6.jpeg" alt=""> 
-                                <p><b>ldl</b></p>
-                                price: 200$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv low" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/photo7.jpeg" alt=""> 
-                                <p><b>sus</b></p>
-                                price: 20$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv low" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/Item1.PNG" alt=""> 
-                                <p><b>bar</b></p>
-                                price: 20$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card filterDiv high" v-for="post in filteredList">
-                                <img class=shopPicture src="Pictures/Item2.PNG" alt=""> 
-                                <p><b>ldl</b></p>
-                                price: 200$
-                                <a href="#">buy now</a>
-                            </div>
-                        </li>
-                    
-                    </ul>
-                
-            
-        </div>
+            <ul id="Product_list">
+                <li>
+                    <div class="card filterDiv high" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/event2.jpeg" alt=""> 
+                        <p><b>poike</b></p>
+                        price: 180₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li> 
+
+                <li>
+                    <div class="card filterDiv low" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/photo7.jpeg" alt=""> 
+                        <p><b>regular</b></p>
+                        price: 25₪ 
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv mid" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/base3.PNG" alt=""> 
+                        <p><b>pikachu</b></p>
+                        price: 95₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv mid" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/photo3.jpeg" alt=""> 
+                        <p><b>blue pokemon</b></p>
+                        price:60₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv mid" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/photo4.jpeg" alt=""> 
+                        <p><b>chinese food</b></p>
+                        price: 80₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv high" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/base2.png" alt=""> 
+                        <p><b>cheese</b></p>
+                        price: 270₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv mid" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/photo6.jpeg" alt=""> 
+                        <p><b>wood style</b></p>
+                        price: 70₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv low" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/base4.png" alt=""> 
+                        <p><b>Sponge bob </b></p>
+                        price: 45₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv low" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/Item1.PNG" alt=""> 
+                        <p><b>snail</b></p>
+                        price: 45₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card filterDiv high" v-for="post in filteredList">
+                        <img class=shopPicture src="Pictures/Item2.PNG" alt=""> 
+                        <p><b>alpaca</b></p>
+                        price: 220₪
+                        <a href="#">buy now</a>
+                    </div>
+                </li> 
+            </ul>    
+        </main>
         
             <!-- ------footer----------- -->
-            <div id="footer">
-                        
+            <footer id="footer">
                 <div class=footer id=media>
                     <b> Media </b>
                     <br> <br>
@@ -162,8 +168,7 @@
                     <p>Activity Time: 9am - 5pm</p>
                     <button class="Refound"> Return & Refund Policy</button> 
                 </div>
-            </div>
-    </div>
+            </footer>
 </body>
 </html>
 
