@@ -218,32 +218,115 @@ body {
 display: grid;
 text-align: center;
 grid-template-areas:
-'details details details address address address'
-'details details details orders orders orders'
-'details details details orders orders orders'
-'details details details orders orders orders';
-
+'ProfilePic ProfilePic address address address'
+'ProfilePic ProfilePic orders orders orders'
+'details details orders orders orders'
+'details details orders orders orders';
+grid-template-columns: 20% 20% 20% 20% 20%;
+grid-template-rows: 1fr 1fr 1fr 1fr;
 
 }
 
-.details {
- margin-top: 20px;
- grid-area: details;
- margin-: 20px;
- margin-bottom: 60px;
+.ProfilePic{
+grid-area: ProfilePic;
+margin: center;
+ margin-left: 27%;
+ margin-right: 27%;
 
+}
+
+.pictureGallery{
+    width: 230px; height: 230px ;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 0.25%;
+}
+
+
+.details {
+ grid-area: details;
+ margin: 30px;
+ margin-top: -5vh;
+ border: 1px solid rgba(17, 17, 17, 0.6);
+ border-radius: 25px;
+ background:linear-gradient(rgba(221,221,221,0.5), rgba(221,221,221,0.5));
+ padding: 10px;
+ opacity: 0.8;
+
+ font-weight: 400;
+ margin-left: 20%;
+ margin-right: 20%;
+
+
+ height:30vh;
  }
 
 .address {
+ grid-area: address;
  margin-top: 20px;
-grid-area: address;
+ border: 1px solid rgba(17, 17, 17, 0.6);
+ border-radius: 25px;
+ background:linear-gradient(rgba(221,221,221,0.5), rgba(221,221,221,0.5));
+ padding: 10px;
+ opacity: 0.8;
+ font-weight: 400;
+ margin-left: 20%;
+ margin-right: 20%;
+
 }
+
 .orders {
- margin-top: 30px;
  grid-area: orders;
- margin-bottom: 40px;
+ margin-top: 20px;
+ border: 1px solid rgba(17, 17, 17, 0.6);
+ border-radius: 25px;
+ background:linear-gradient(rgba(221,221,221,0.5), rgba(221,221,221,0.5));
+ opacity: 0.8;
+ font-weight: 400;
+ padding: 10px;
+ margin-left: 5%;
+ margin-right: 5%;
 
  }
+
+ .ordersExample{
+ text-align:left;
+ margin-left: 5%;
+ margin-right: 10%;
+ }
+
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #e6ffe6;
+    text-align: center;
+}
+.styled-table th,
+.styled-table td {
+    padding: 4px 6px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+
 
  
 /* ----------------mobile----------------- */
