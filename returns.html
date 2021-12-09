@@ -48,7 +48,7 @@
         <main id="Main">
             <div class="info">          
                 <div id="ItemTable">
-                    <div id="Title">
+                    <div class="Title">
                         <label class=items> Return & Refund Policy</label> <br>
                     </div>
                     <div id="GreenInfo">
@@ -56,7 +56,7 @@
                             Thanks for shopping at Succulents3D.
                             If you are not entirely satisfied with your purchase, we're here to help. <br> <br>   
                         </p>
-                        <div id="SubTitles">
+                        <div class="SubTitles">
                             <p>
                                 Returns <br> 
                             </p>
@@ -68,7 +68,7 @@
                             Your item must be in the original packaging.
                             Your item needs to have the receipt or proof of purchase. <br> <br>
                         </p>
-                        <div id="SubTitles">
+                        <div class="SubTitles">
                             <p>
                                 Refunds <br> 
                             </p>
@@ -84,19 +84,20 @@
                     </div>
                 </div>
                 <div id="Contact">
-                    <div id="Title">
+                    <div class="Title">
                     describe your issue below:
                     </div> <br>
                     <form action="/action_page.php">
-                        <label id="GreenInfo" for="fname">First name:</label>
-                        <input type="text" id="SubTitles" name="fname"><br><br>
-                        <label id="GreenInfo" for="lname">Last name:</label>
-                        <input type="text" id="lname" name="lname"><br><br>
-                        <label id="GreenInfo" for="lname">your problem:</label> <br>
-                        <textarea name="problem" cols="40" rows="5" ></textarea> <br>
-                        <label id="GreenInfo" for="lname">image:</label>
+                        <label class="GreenInfo" for="id1">First name:</label>
+                        <input type="text" id="id1" minlength="4" name="fname"><br><br>
+                        <label class="GreenInfo" for="id2">Last name:</label>
+                        <input type="text" id="id2" minlength="4" name="lname"><br><br>
+                        <label class="GreenInfo" >your problem:</label> <br>
+                        <textarea name="problem" id = "id3" required minlength="20" cols="40" rows="5" ></textarea> <br>
+                        <label class="GreenInfo">image:</label>
                         <input type="file" id="file" name="file"><br><br>
-                        <input type="submit" value="Submit">
+                        <input onclick="validationReturns()" type="submit" value="Submit">
+                        <p id="demo"></p>
                     </form>
                 </div>
             </div>
