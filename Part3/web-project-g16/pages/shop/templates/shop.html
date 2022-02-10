@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Shop' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('shop.static', filename='css/shop.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+     <main id="search_eara">
+        <br>
+
+         {% if  message%}
+            <p id = 'message' > {{ message }}</p>
+         {% endif %}
+        <br>
+         {% if session.user_data and session.user_data['username'] == 'Shop Admin' %}
+            <a href="/editShop">
+            <button class=border> edit my shop products</button></a>
+        {% endif %}
+
+        <style>
+            main{
+                background: url("{{ url_for('shop.static',filename='media/white.jpg') }}") ;
+            }
+        </style>
+
+        <input class="search-box" type="text" id="search" onkeyup="myFunction()" placeholder="Search for names..">
+
+         <style>
+         #search{
+                background-image: url("{{ url_for('shop.static',filename='media/searchicon.jpg') }}") ;
+            }
+        </style>
+
+        <div class = filter>
+            &#160; &#160; &#160; &#160;<b> Shop By Price: </b>
+            <form action="/shop" method="GET">
+                <input name = "price" value = "whole" type="hidden">
+                <button class="btn active"> The whole store </button>
+            </form>
+            <form action="/shop" method="GET">
+                <input name = "price" value = "low" type="hidden">
+                <button class="btn">under 50₪</button>
+            </form>
+            <form action="/shop" method="GET">
+                <input name = "price" value = "mid" type="hidden">
+                <button class="btn">50₪-100₪</button>
+            </form>
+            <form action="/shop" method="GET">
+                <input name = "price" value = "high" type="hidden">
+                <button class="btn">over 100₪</button>
+            </form>
+
+        </div>
+        <div class = filter>
+            &#160; &#160; &#160; &#160;<b> On Sale:</b> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <form action="/shop" method="GET">
+                <input name = "sale" value = "True" type="hidden">
+                <button class="btn">sale</button>
+            </form>
+        </div>
+        <div class = filter>
+            &#160; &#160; &#160; &#160; <b> Colour: </b> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <form action="/shop" method="GET">
+                <input name = "color" value = "green" type="hidden">
+                <button id = "green" class="btn">green</button>
+            </form>
+            <form action="/shop" method="GET">
+                <input name = "color" value = "yellow" type="hidden">
+                <button id = "yellow" class="btn">yellow</button>
+            </form>
+            <form action="/shop" method="GET">
+                <input name = "color" value = "white" type="hidden">
+                <button id = "white" class="btn">white</button>
+            </form>
+            <form action="/shop" method="GET">
+                <input name = "color" value = "blue" type="hidden">
+                <button id = "blue" class="btn">blue</button>
+            </form>
+            <form action="/shop" method="GET">
+                <input name = "color" value = "black" type="hidden">
+                <button id = "black" class="btn">black</button>
+            </form>
+
+        </div>
+
+
+        <ul id="Product_list">
+            {%  for product in products %}
+            <li >
+
+                <div class="card filterDiv {{ product.price_level }} {% if product.sale == 'sale'%}
+                                                                        'sale'
+                                                                     {%endif%}
+                                            {{ product.sale }} {{ product.color }}" v-for="post in filteredList">
+                    <img class=shopPicture src="{{ url_for('shop.static', filename= product.link) }}" alt="">
+                    <p><b>{{ product.name }}</b></p>
+                    <p> price:
+                        {%if product.sale %}
+                            <del>{{ product.price }}₪</del>
+                            <ins>{{ product.sale_price }}</ins></p>
+                        {% else %}
+                            {{ product.price }}₪
+                        {% endif %}
+                    {% if product.inStock>0%}
+                        <form id="addtocart" method="POST" action="/add_to_cart" >
+                            <input type="hidden" name="productId" value="{{ product.product_id }}">
+                            <input type="hidden" name="productPrice" value="{{ product.price }}">
+                            <input type="hidden" name="productSale" value="{{ product.sale_price }}">
+                            <button id="addtocart" type="submit">add to cart</button>
+                        </form>
+                    {% else %}
+                        <div id="soldOutDiv">
+                            <button id="soldOut"> Sold Out!</button>
+                        </div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+
+        </ul>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                var scrollpos = localStorage.getItem('scrollpos');
+                if (scrollpos) window.scrollTo(0, scrollpos);
+                });
+
+            window.onbeforeunload = function(e) {
+                localStorage.setItem('scrollpos', window.scrollY);
+            };
+        </script>
+     </main>
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('shop.static', filename='js/shop.js') }}"></script>
+{% endblock %}

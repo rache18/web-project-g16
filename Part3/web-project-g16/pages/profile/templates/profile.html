@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Profile' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('profile.static', filename='css/profile.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <main id="Main">
+            <div class="ProfilePic"><br>
+                <img class=pictureGallery src="{{ url_for('profile.static', filename='media/profile.jpeg') }}" alt="" >
+            </div>
+            <div class="details">
+                <ul><b> This is me</b>
+                    <li>User Name: {{ session.user_data['username'] }}</li>
+                    <li id="userEmail">Email: {{ email }}</li>
+                    <li id="dateOfBirth">Date of birth: {{ birthdate }}</li>
+
+                    <li>
+                         <a href='/UpdateEmail'>
+                            <button class = "border"> Edit email </button>
+                         </a>
+                    </li>
+                    <li>
+                         <a href='/UpdatePassword'>
+                            <button class = "border"> Edit password </button>
+                         </a>
+                    </li> <br> <br><br>
+                    <li>
+                         <a href='/deleteUser'>
+                            <button class = "border " onclick=""> delete account </button>
+                         </a>
+                    </li>
+
+                </ul>
+            </div>
+                 <div class="address">
+                    <ul><b> Address details</b>
+                        <li>Address: {{ address }}</li>
+                        <li>Telephone: {{ phone }} </li>
+                         <li>
+                             <a href='/UpdateAddress'>
+                                <button class = "border"> Edit address </button>
+                             </a>
+                        </li>
+                         <li>
+                         <a href='/UpdatePhone'>
+                            <button class = "border" onclick="filterupdate('phone')"> Edit phone </button>
+                         </a>
+                    </li>
+                    </ul>
+                 </div>
+                 <div class="orders">
+                     <ul><b> my last orders</b>
+                         <div class="ordersExample">
+                             <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order no.</th>
+                                        <th>Date</th>
+                                        <th>Address</th>
+                                        <th>Payment</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {%  for order in orders %}
+                                    <tr>
+                                        <td>{{ order.cart_id }}</td>
+                                        <td>{{ order.time}}</td>
+                                        <td>{{ order.address}}</td>
+                                        <td>{{ order.total_cost}}</td>
+                                        <td>{{ order.status}}</td>
+                                    </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                         </div>
+                    </ul>
+                 </div>
+            <br>
+    </main>
+
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('profile.static', filename='js/profile.js') }}"></script>
+{% endblock %}

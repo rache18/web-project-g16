@@ -1,0 +1,106 @@
+create schema web_project_g16;
+
+use web_project_g16;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+  username varchar(100) NOT NULL,
+  email varchar(100) NOT NULL,
+  password varchar(100) NOT NULL,
+  firstName varchar(100) NOT NULL,
+  lastName varchar(100) DEFAULT NULL,
+  phone varchar(80) DEFAULT NULL,
+  address varchar(80) DEFAULT NULL,
+  birthdate date NOT NULL,
+  PRIMARY KEY (username)
+                   );
+
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+  product_id int NOT NULL AUTO_INCREMENT,
+  name varchar(100) NOT NULL,
+  price int NOT NULL,
+  sale_price int NULL,
+  color varchar(100) NOT NULL,
+  sale varchar(5)  NULL,
+  price_level varchar(10) NOT NULL,
+  link varchar(1000) NOT NULL ,
+  inStock int NOT NULL ,
+  PRIMARY KEY (product_id)
+                      );
+
+insert into web_project_g16.products ( name, price,sale_price, color, sale, price_level,link,inStock)
+                            values ('poike',180,140,'black','sale','high', 'media/poike.png',0),
+                                   ('box',80,55,'green','sale','mid','media/box.png',50),
+                                   ('avocado',190,NULL,'green',NULL,'high','media/avocado.png',100),
+                                   ('pinapple',40,NULL,'yellow',NULL,'low','media/pinapple.png',1),
+                                   ('regular',40,25,'black','sale','low','media/regular.jpeg',100),
+                                   ('pickachu',45,NULL,'yellow',NULL,'low','media/pickachu.png',10),
+                                   ('blue pokemon',90,60,'blue','sale','mid','media/blue pokemon.jpeg',10),
+                                   ('chinese food',80,NULL,'white',NULL,'mid','media/chinese food.jpeg',10),
+                                   ('cheese',20,NULL,'yellow',NULL,'low','media/cheese.png',10),
+                                   ('wood style',70,NULL,'black',NULL,'mid','media/wood style.jpeg',10),
+                                   ('Sponge bob',45,NULL,'blue',NULL,'low','media/Sponge bob.png',10),
+                                   ('snail',45,NULL,'white',NULL,'low','media/snail.png',10),
+                                   ('alpaca',240,160,'white','sale','high','media/alpaca.png',10),
+                                   ('yin&yang',130,NULL,'black',NULL,'high','media/yin&yang.jpeg',10),
+                                   ('cat',130,30,'white','sale','low','media/cat.png',10)
+                                   ;
+
+
+DROP TABLE IF EXISTS carts;
+CREATE TABLE carts (
+  cart_id int auto_increment,
+  username VARCHAR(30) NOT NULL,
+  time timestamp DEFAULT CURRENT_TIMESTAMP,
+  total_cost int,
+  address varchar(100),
+  status varchar(1000) DEFAULT 'in process',
+
+  PRIMARY KEY (username,cart_id)
+                   )engine = MyIsam;
+
+DROP TABLE IF EXISTS products_in_cart;
+CREATE TABLE products_in_cart (
+  cart_id int NOT NULL,
+  username varchar(100) NOT NULL,
+  product_id int NOT NULL,
+  quantity int NOT NULL ,
+  PRIMARY KEY (cart_id,product_id,username)
+                              );
+
+DROP TABLE IF EXISTS complains;
+CREATE TABLE complains (
+  complain_id int NOT NULL,
+  username varchar(100) NOT NULL,
+  order_number varchar(10) NOT NULL,
+  subject varchar(100) NOT NULL,
+  problem varchar(500),
+  file_url varchar(200),
+  PRIMARY KEY (complain_id,username)
+     );
+
+DROP TABLE IF EXISTS events;
+CREATE TABLE events (
+  id int NOT NULL,
+  title varchar(100) NOT NULL,
+  content varchar(1000) NOT NULL,
+  PRIMARY KEY (id)
+     );
+
+
+insert into web_project_g16.events ( id, title,content)
+                            values (1,'03 August 2022- Fair following Valentines Day',
+                                    'Following Valentines Day, well be waiting for you with a new collection and crazy specials.<br>
+                                    The sale will take place at the Sofrim Park between 14:00 and 20:00'),
+                                    (2,'30 December 2021- Silvester is coming! ',
+                                    'If you are also excited like us in honor of New Years Eve,<br>
+                                    you will be even more excited when you see the new collection in honor of the occasion <br>
+                                    9:00-14:00 At the BGU Campus'),
+                                    (3,'11 January 2022- Public Sale In the BGU Campus!',
+                                    '9:00-14:00 get 30% off on ALL products <br>
+                                    come early stock is limited <br>
+                                    we are waiting for you'),
+                                    (4,'contribution!',
+                                    '9:00-14:00 15 January 2022, fundraising event')
+                                   ;

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Cart' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+        <main id="Main">
+            <div class="shopcontainer">
+
+              <div class="Shopheading">
+                <h1>
+                  <span class="shopH">s-3D</span> Shopping Cart
+                </h1>
+              </div>
+
+              <div class="cart">
+                <div class="table">
+
+                  <div id="tableHeader" class="layout-inline  th tableHeader">
+                    <div class="col col-pro">Product</div>
+                    <div class="col col-price align-center "> Price </div>
+                    <div class="col col-qty align-center">QTY</div>
+                    <div class="col">Total</div>
+                  </div>
+
+              {%  for product in products_in_cart %}
+                <div class="layout-inline row">
+
+
+                    <div class="col col-pro layout-inline">
+                        <img src="{{ url_for('shop.static', filename= product.link) }}" alt="1" />
+                        <p>{{ product.name }}</p>
+                    </div>
+
+                      <div class="col col-price col-numeric align-center ">
+                        <p>{% if product.sale_price==None  %}
+                                {{ product.price }}
+                            {%  else %}
+                                {{ product.sale_price}}₪ instead of {{ product.price }}₪ !
+                            {% endif %}
+                        </p>
+                      </div>
+
+                      <div class="col col-qty layout-inline">
+                        <form id="minus" method="POST" action="/minus" >
+                            <input type="hidden" name="quantity" value="{{ product.quantity }}">
+                            <input type="hidden" name="product_id" value="{{ product.product_id }}">
+                            <button class="qty qty-minus" id="minus" type="submit">-</button>
+                        </form>
+                        <input type="numeric" value="{{ product.quantity }}" />
+                        <form id="minus" method="POST" action="/plus" >
+                            <input type="hidden" name="quantity" value="{{ product.quantity }}">
+                            <input type="hidden" name="product_id" value="{{ product.product_id }}">
+                            <button class="qty qty-minus" id="plus" type="submit">+</button>
+                        </form>
+                      </div>
+
+                      <div class="col col-total col-numeric">
+                        <p>{% if product.totalSALE==None  %}
+                                {{ product.totalPRICE }}₪
+                            {%  else %}
+                                {{ product.totalSALE}}₪
+                            {% endif %}
+                        </p>
+                      </div>
+                  </div>
+              {% endfor %}
+
+
+
+
+
+                  <div class="tf">
+                    <div class="row layout-inline">
+                    <p> Total {{ total_price }}₪ </p> <br><br>
+
+                    <a href="/payment" class="btncart btncart-update">checkout</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function(event) {
+                    var scrollpos = localStorage.getItem('scrollpos');
+                    if (scrollpos) window.scrollTo(0, scrollpos);
+                    });
+
+                window.onbeforeunload = function(e) {
+                    localStorage.setItem('scrollpos', window.scrollY);
+                };
+            </script>
+        </main>
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('cart.static', filename='js/cart.js') }}"></script>
+{% endblock %}

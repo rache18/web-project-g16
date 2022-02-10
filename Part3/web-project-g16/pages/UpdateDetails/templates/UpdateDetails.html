@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Update Details' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('UpdateDetails.static', filename='css/UpdateDetails.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+ <main id="Main" class="login_center">
+     <style>
+        main{
+            background: url("{{ url_for('UpdateDetails.static',filename='media/photo2.jpeg') }}") ;
+        }
+    </style>
+            <div class="login_img"></div>
+             <div class="login_text">
+                <div class="login_h">
+                    <div>SUCCULENTS<span>3D</span></div>
+                </div>
+                <div class="login">
+                    <br><br><br>
+                    <form action="/update_user" method="POST" name="UpdateDetails" onsubmit="return UpdateDetailsvalidateForm()" >
+                        {% if update == 'email' %}
+                            <input type ='hidden' id="password" class="inputUpdate password" type="password" placeholder="my new password" name="password"><br>
+                            <input type ='hidden' id="password2" class="inputUpdate password" type="password" placeholder="repeat new password" name="newpassword2"><br>
+                            <input type = 'hidden' id="address" class="inputUpdate address" type="text" placeholder="my new address" name="address"><br>
+                            <input  type ='hidden' id="phone" class="inputUpdate phone" type="text" placeholder="my new phone" name="phone"><br>
+                            <input id="Email" class="inputUpdate email" type="email" placeholder="my new email" name="email"><br>
+                        {% elif update == 'phone'  %}
+                            <input type ='hidden' id="password" class="inputUpdate password" type="password" placeholder="my new password" name="password"><br>
+                            <input type ='hidden' id="password2" class="inputUpdate password" type="password" placeholder="repeat new password" name="newpassword2"><br>
+                            <input type = 'hidden' id="address" class="inputUpdate address" type="text" placeholder="my new address" name="address"><br>
+                            <input type ='hidden' id="Email" class="inputUpdate email" type="email" placeholder="my new email" name="email"><br>
+                            <input id="phone" class="inputUpdate phone" type="text" placeholder="my new phone" name="phone"><br>
+                        {% elif update == 'address'  %}
+                            <input type ='hidden' id="password" class="inputUpdate password" type="password" placeholder="my new password" name="password"><br>
+                            <input type ='hidden' id="password2" class="inputUpdate password" type="password" placeholder="repeat new password" name="newpassword2"><br>
+                            <input type ='hidden' id="Email" class="inputUpdate email" type="email" placeholder="my new email" name="email"><br>
+                            <input type ='hidden' id="phone" class="inputUpdate phone" type="text" placeholder="my new phone" name="phone"><br>
+                            <input id="address" class="inputUpdate address" type="text" placeholder="my new address" name="address"><br>
+                        {% else  %}
+                            <input type ='hidden' id="Email" class="inputUpdate email" type="email" placeholder="my new email" name="email"><br>
+                            <input type ='hidden' id="phone" class="inputUpdate phone" type="text" placeholder="my new phone" name="phone"><br>
+                            <input type ='hidden' id="address" class="inputUpdate address" type="text" placeholder="my new address" name="address"><br>
+                            <input id="password" class="inputUpdate password" type="password" placeholder="my new password" name="password"><br>
+                            <input id="password2" class="inputUpdate password" type="password" placeholder="repeat new password" name="newpassword2"><br>
+                        {% endif %}
+                        <input type="Submit" value="Enter">
+                    </form>
+                </div>
+            </div>
+  </main>
+{% endblock %}
+
+
+{% block page_body_js %}
+
+    <script src="{{ url_for('UpdateDetails.static', filename='js/UpdateDetails.js') }}"></script>
+{% endblock %}
